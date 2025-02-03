@@ -1,4 +1,0 @@
-this is my first line of code that is used to 
-my Aws Vpc project.
-this is second line of code that will come to the second 
-next line 
