@@ -1,11 +1,10 @@
 
-# Explanation of my Project
-
 ## Overview  
 This project implements a **VPC with both public and private subnets** for a production-ready AWS architecture. It includes key AWS services such as **Bastion Host, NAT Gateway, Load Balancer, and Auto Scaling** to ensure secure and efficient cloud infrastructure.
 
 ## Architecture Diagram  
 ![VPC Architecture](https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-example-private-subnets.png)  
+
 
 ## Components  
 1. **VPC (Virtual Private Cloud)** – Defines the network for AWS resources.  
