@@ -45,37 +45,6 @@ network environment for deploying cloud applications.
     <li> <strong>Network ACLs (NACLs):</strong> Provide subnet-level security with rule-based access control. </li>
 </ul>
 
-<h2> 🚀 Deployment Steps </h2>
-<h3> 1️⃣ Create a VPC </h3>
-<pre>
-aws ec2 create-vpc --cidr-block 10.0.0.0/16
-</pre>
-
-<h3> 2️⃣ Create Public & Private Subnets </h3>
-<pre>
-aws ec2 create-subnet --vpc-id vpc-12345678 --cidr-block 10.0.1.0/24 --availability-zone us-east-1a
-aws ec2 create-subnet --vpc-id vpc-12345678 --cidr-block 10.0.2.0/24 --availability-zone us-east-1b
-</pre>
-
-<h3> 3️⃣ Attach Internet Gateway & NAT Gateway </h3>
-<pre>
-aws ec2 create-internet-gateway
-aws ec2 attach-internet-gateway --internet-gateway-id igw-12345678 --vpc-id vpc-12345678
-
-aws ec2 allocate-address
-aws ec2 create-nat-gateway --subnet-id subnet-12345678 --allocation-id eipalloc-12345678
-</pre>
-
-<h3> 4️⃣ Configure Route Tables </h3>
-<pre>
-aws ec2 create-route-table --vpc-id vpc-12345678
-aws ec2 create-route --route-table-id rtb-12345678 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-12345678
-</pre>
-
-<h3> 5️⃣ Launch EC2 Instances </h3>
-<pre>
-aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t2.micro --subnet-id subnet-12345678
-</pre>
 
 <h2> 🔒 Security Best Practices </h2>
 <ul>
